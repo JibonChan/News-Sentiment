@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    
+    <%- include("partials/header") -%>
+
+    <body>
+        <div class="row search_form">
+            <h2>News Sentiment</h2>
+            <form class="mb-2" method="POST" action="/">
+                <label for="query">Search News</label>
+                <input id="query" type="text" name="query" autocomplete="off">
+
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+
+
+        <div class="row mt-3">
+
+            <h3>Search Results</h3>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Sno</td>
+                            <td>Source</td>
+                            <td>Title</td>
+                            <td>Description</td>
+                            <td>Posted</td>
+                            <td>Sentiment</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <a><tr>
+                            <td>1</td>
+                            <td>CNN</td>
+                            <td>Neymar</td>
+                            <td>Nejmar joins PSG</td>
+                            <td>1hr Ago</td>
+                            <td>Positive</td>
+                        </tr></a>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        
+        <%- include("partials/footer") -%>
+
+    </body>
+
+</html>

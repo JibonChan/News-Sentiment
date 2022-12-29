@@ -1,0 +1,25 @@
+.news-card {
+    width: 250px;
+}
+
+
+
+.search_form {background-color: rgb(212, 211, 211); padding: 6px;}
+form > input {width: 300px; border-radius: 15px 15px; margin-left: 10px; padding: 0 5px}
+form > button {width: 150px; border-radius: 15px 15px; margin-left: 10px;}
+
+
+
+table {width: 100%;}
+thead { background-color: rgb(212, 211, 211);}
+td {overflow: scroll; border-bottom: solid 1px; border-color: rgb(65, 65, 65);}
+td:nth-child(1) { width: 4%; }
+td:nth-child(2) { width: 8%; }
+td:nth-child(3) { width: 28%; }
+td:nth-child(4) { width: 40%; }
+td:nth-child(5) { width: 15%; text-align: center;}
+td:nth-child(6) { width: 7%; text-align: center;}
+
+
+
+footer {height: 80px; text-align: center; background-color: rgb(212, 211, 211);}

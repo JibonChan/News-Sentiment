@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Result Sentiment</title>
+    </head>
+
+    <body>
+
+        <div>
+            <h2>Search History</h2>
+            <ul>
+                <% for (var i=0; i<shis.length; i++) {%>
+                <li> <%= shis[i] %> </li>
+                <% } %>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Search Box</h2>
+            <form class="" method="POST" action="/">
+                <label for="query">Search News</label>
+                <input id="query" type="text" name="query">
+
+                <button type="submit">Search</button>
+            </form>
+
+            <h3>Search Result</h3>
+            <p>
+                <%= search_result %>
+            </p>
+        </div>
+
+    </body>
+
+</html>

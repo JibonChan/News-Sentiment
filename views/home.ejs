@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    
+    <%- include("./partials/header") -%>
+
+    <body>
+
+        <div class="row search_form">
+            <h2>News Sentiment</h2>
+            <form class="mb-2" method="POST" action="/">
+                <label for="query">Search News</label>
+                <input id="query" type="text" name="query" autocomplete="off">
+
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <% if (search_result === "") { %>
+            <p>Search To Display Output </p>
+        <% } else { %>
+            <div class="row mt-3">
+
+                <h3>Search Results</h3>
+                <small>QUERY: <%= search_query %></small>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Sno</td>
+                                <td>Source</td>
+                                <td>Title</td>
+                                <td>Description</td>
+                                <td>Posted</td>
+                                <td>Sentiment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% search_result = JSON.parse(search_result) %>
+                            <% for (let i=0; i<search_result.length; i++) { %>
+                                <%    const link = search_result[i].link.replace('"',''); %>
+                                <%    const source = search_result[i].sourceName; %>
+                                <%    const title = search_result[i].title; %>
+                                <%    const description = search_result[i].description; %>
+                                <%    const posted = search_result[i].createdAt; %>
+                                <%    const sentiment = "Positive"; %>
+                        
+                                    <tr>
+                                        <td><%= i+1 %></td>
+                                        <td><a <%= link %> target="_blank"><%= source %></td>
+                                        <td><%= title %></td>
+                                        <td><%= description %></td>
+                                        <td><%= posted %></td>
+                                        <td><%= sentiment %></td>
+                                    </tr>
+                                <% } %>                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <% } %>
+        
+        
+        <%- include("./partials/footer") -%>
+
+    </body>
+
+</html>
